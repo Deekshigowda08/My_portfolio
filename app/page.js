@@ -1,113 +1,272 @@
-import Image from "next/image";
+"use client"
+import React, { useState, forwardRef, useEffect, useRef } from 'react'
+import Meteors from ".//meteors.js";
+import TypingAnimation from './/typingtext.js';
+import { FiInstagram } from "react-icons/fi";
+import { IoLogoGithub } from "react-icons/io5";
+import { BsTwitterX } from "react-icons/bs";
+import { FaLinkedin } from "react-icons/fa";
+import ShineBorder from ".//secondpage.js";
+import { AnimatedBeam } from ".//beam.js";
+import IconCloud from ".//rounded.js"
+import Link from 'next/link.js';
+import { ToastContainer, toast } from 'react-toastify';
+import Image from 'next/image'
+const Circle = forwardRef(
+  ({ className, children }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={
+          "z-10  h-[40vh] w-[15vw] circlesize justify-center rounded-2xl border bg-black p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]"}
+      >
+        {children}
+      </div>
+    );
+  }
+);
 
-export default function Home() {
+const page = () => {
+  const texts = ["Engineering Student", "Full Stack Devol∞per", "Basic Level Video Editor", "Basic Level Web Designer"];
+  const [color, setColor] = useState('#FFFF00');
+  const containerRef = useRef(null);
+  const div1Ref = useRef(null);
+  const div2Ref = useRef(null);
+  const div3Ref = useRef(null);
+  const [name, setname] = useState("");
+  const [email, setemail] = useState("");
+  const [text, setmessage] = useState("")
+  const submit=async (e)=>{
+    e.preventDefault();
+    if (name=="" && email=="" &&text=="") {
+      alert("Enter vaild message")
+  }else{
+      const a=await fetch("/api", {
+        method: "post",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({name,email,text})
+      });
+      const result= await a.json()
+    if(result.success)
+     {
+      alert("Email had been sent")
+      setname("");setemail("");setmessage("");}
+      
+  }
+  };
+  const slugs = [
+    "javascript",
+    "react",
+    "html5",
+    "css3",
+    "nodedotjs",
+    "express",
+    "vercel",
+    "git",
+    "github",
+    "visualstudiocode",
+    "figma",
+    "python",
+    "c",
+    "cpp","mongodb","mongoose","tailwind","django","postman"
+  ];
+
+  useEffect(() => {
+    const colors = ['#98FF98', '#FFDAB9', '#B0E0E6', '#FFFF00', '#00FFFF', "#4169E1", "#DC143C", "#50C878", "#36454F", "#003366", "#800020", "#D3D3D3", "#F5F5DC", "#E6E6FA"];
+    const changeColor = () => {
+      const newColor = colors[Math.floor(Math.random() * colors.length)];
+      setColor(newColor);
+    };
+    const intervalId = setInterval(changeColor, 5000);
+    return () => clearInterval(intervalId);
+  }, []);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <div className="relative  w-full h-screen  grid place-content-center overflow-hidden rounded-lg border bg-black md:shadow-xl">
+        <Meteors  number={150} />
+        <div className='text-white  w-[80vw] h-[75vh] phonesize1  rounded-xl bg-white flex '>
+          <div className='w-[60%] phonediv h-full p-10'>
+            <div><span className='text-black font-serif font-bold fontsize01 text-3xl'>Hey,It's <span className='text-purple-800 fontsize01 smalltext font-serif font-bold text-3xl'>Deekshith H R</span> </span></div>
+            <div className='w-[70%]  sm:hidden  grid place-content-center h-[20%] my-1 mx-auto '>
+            <div className='w-[80%] h-[50%]  rounded-full overflow-hidden' style={{
+              width: '100px',
+              height: '100px',
+              border: "2px solid black",
+              backgroundColor: color,
+              transition: 'background-color 1s ease-in-out',
+            }}><Image
+                className='rotate-6'
+                src="/profile.png"
+                width={320}
+                height={320}
+
+                alt="Picture of the author"
+              /></div>
+          </div>
+            <div><span className='text-black font-serif fontsize font-bold text-2xl'>I'm a <span className='text-purple-800 font-serif  font-bold text-2xl fontsize'> <TypingAnimation texts={texts} duration={100} className="custom-class " /> </span> </span></div>
+            <div className='text-black font-serif font-semibold text-xs'><p class=" first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900 first-letter:mr-3 first-letter:float-left">I am an AIML student at the University of Visvesvaraya College of Engineering in Bengaluru. I have knowledge in web development and programming languages including Python, JavaScript, C, and C++. Additionally, I am a basic-level video editor with a strong enthusiasm for technology-related subjects. My passion drives me to continuously explore and learn new technologies.</p></div>
+            <div className='sm:hidden text-red-600 text-xs font-semibold font-serif'>* Use Desktop site option in your phone or Laptop for better view</div>
+            <div className='flex pl-4 margin center mt-10 text-black'><div className='flex border  rounded-md p-3 gap-4'>
+              <Link href="https://www.instagram.com/__deekshith_gowda__08?utm_source=qr&igsh=eDc1eGN6NnVvMWxo" className='hover:bg-gray-200 hover:p-2 hover:rounded-full cursor-pointer'><FiInstagram /></Link>
+              <Link href="https://github.com/Deekshigowda08" className='hover:bg-gray-200 hover:p-2 hover:rounded-full cursor-pointer'><IoLogoGithub /></Link>
+              <Link href="https://x.com/deekshigowda80?t=TEhWlTDVMvPhidi8VbGuyw&s=08 " className='hover:bg-gray-200 hover:p-2 hover:rounded-full cursor-pointer'><BsTwitterX /></Link>
+              <Link href="https://www.linkedin.com/in/deekshith-gowda-019b56305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " className='hover:bg-gray-200 hover:p-2 hover:rounded-full cursor-pointer'><FaLinkedin /></Link>
+            </div>
+                
+            </div>
+
+          </div>
+          <div className='w-[40%] hiding grid place-content-center h-full m-2 '>
+            <div className='w-[300px] h-[300px]  rounded-full overflow-hidden' style={{
+              width: '300px',
+              height: '300px',
+              border: "2px solid black",
+              backgroundColor: color,
+              transition: 'background-color 1s ease-in-out',
+            }}><Image
+                className='rotate-6'
+                src="/profile.png"
+                width={320}
+                height={320}
+
+                alt="Picture of the author"
+              /></div>
+          </div></div>
+      </div>
+      <div className='relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg border-2 bg-black md:shadow-xl'>
+        <ShineBorder
+          className="relative flex h-[70vh] w-full flex-col  overflow-hidden rounded-lg  border-2 bg-background md:shadow-xl"
+          color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+        >
+          <div><span className='text-purple-800 font-serif font-bold text-3xl'>Education</span></div>
+          <div
+            className="relative flex w-full   justify-center overflow-hidden rounded-lg  bg-background p-10 "
+            ref={containerRef}
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+            <div className="flex h-full w-full flex-col items-stretch justify-between gap-10">
+              <div className="flex flexchanging flex-row justify-between">
+                <Circle ref={div1Ref} className="flex  circlesize">
+                  <div className='text-yellow-300 font-bold text-xl font-serif'>1 to 10</div>
+                  <div><p class="font-serif font-semibold text-xs first-line:tracking-widest first-letter:text-4xl  sm:first-letter:text-7xl first-letter:font-bold text-white first-letter:mr-3 chikka first-letter:float-left">I completed my education from 1st to 10th grade at Jyothir Vikas English Medium School in Kadabagere, securing 93% in my 10th grade.</p></div>
+                </Circle>
+                <Circle ref={div2Ref} className="flex circlesize">
+                  <div className='text-yellow-300 font-bold text-xl font-serif'>PUC</div>
+                  <div><p class="font-serif font-semibold text-xs first-line:tracking-widest first-letter:text-4xl sm:first-letter:text-7xl first-letter:font-bold text-white first-letter:mr-3 chikka first-letter:float-left">I completed my PUC at BGS PU College, Chikkamagaluru, specializing in the science stream with computer science as an optional subject. There, I learned the basics of computing and C++ programming.</p></div>
+                </Circle>
+                <Circle ref={div3Ref} className="flex circlesize">
+                  <div className='text-yellow-300 font-bold text-xl font-serif'>Engineering</div>
+                  <div><p class="font-serif font-semibold text-xs first-line:tracking-widest sm:first-letter:text-5xl first-letter:text-4xl first-letter:font-bold text-white first-letter:mr-3 chikka first-letter:float-left">I have joined the University of Visvesvaraya College of Engineering in Bengaluru through the CET competitive exam conducted by the Karnataka government, and I have chosen Artificial Intelligence and Machine Learning as my branch of study.</p></div>
+                </Circle>
+
+              </div>
+            </div>
+
+            <AnimatedBeam
+              duration={8}
+              containerRef={containerRef}
+              fromRef={div1Ref}
+              toRef={div3Ref}
             />
-          </a>
+          </div>
+        </ShineBorder>
+      </div>
+      <div className="relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg border bg-black md:shadow-xl">
+        <div className="relative  h-[80vh] lastpage w-[75vw] items-center justify-center  rounded-lg border bg-white ">
+          <div className='w-full text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Skills</span></div>
+          <div className='flex flexchanging w-full  phonesize1 h-[90%]'><div className='w-[50%] page03 p-20'>
+            <ul className='list-disc font-serif font-semibold text-xs'>
+              <li><div className='text-base text-violet-800'>Things which i can do.</div>
+                <div className='px-3 '><ul>
+                  <li>* Web Delopment</li>
+                  <li>* Basic level Vedio Editing </li>
+                  <li>* Basic level poster Editing</li></ul></div>
+              </li>
+              <li><div className='text-base text-violet-800'>Programing language i know.</div>
+                <div className='px-3'><ul>
+                  <li>* C++</li>
+                  <li>* C</li>
+                  <li>* Python</li>
+                  <li>* javascript</li>
+                </ul></div>
+              </li>
+              <li><div className='text-base text-violet-800'>Language which i know.</div>
+                <div className='px-3'><ul>
+                  <li>* Kannada</li>
+                  <li>* English</li>
+                  <li>* Hindi</li>
+                </ul></div>
+              </li>
+              <li><div className='text-base text-violet-800'>Softwares which i use.</div>
+                <div className='px-3'>
+                  <ul>
+                    <li>* Visual Code</li>
+                    <li>* Davinci Resolve</li>
+                    <li>* Picsart</li>
+                    <li>* Capcut</li>
+                    <li>* Canva</li>
+                  </ul></div>
+              </li></ul>
+              
+            </div>
+            <div className='w-[50%] page031'><IconCloud iconSlugs={slugs} /></div>
+          </div>
         </div>
-      </div>
+       </div>
+       <div className='relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg border-2 bg-black md:shadow-xl'>
+       <div className="relative  h-[85vh] lastpage w-[70vw] items-center justify-center  rounded-lg border bg-white ">
+        <div className='w-full text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Projects</span></div>
+        <div className='h-[20%] w-[90%] page04 mx-10 my-3 rounded-lg px-4 py-3 border '><p class="font-serif font-semibold text-[10px] smallfont text-black ">Here are some of my web development projects created using a variety of technologies. I have utilized JavaScript, HTML, CSS, React.js, Next.js, Express.js,Django, Mongoose, MongoDB, and Figma to build these projects. Each project demonstrates my skills in front-end and back-end development, as well as UI/UX design. From dynamic web applications to responsive user interfaces, these projects showcase my ability to integrate different frameworks and tools effectively. My experience with databases like MongoDB and design tools like Figma further highlights my comprehensive approach to web development. </p></div>
+        <div className='w-full sm:grid grid-cols-3  gridrow place-content-center gap-4 gap-y-2 h-[70%]'>
+          <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
+          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay  src="/sgpaproject.mp4"/></div>
+          <div className='text-black font-bold text-[10px] font-serif'>Project Name:SGPA calculator <br />Link: <a href='https://deekshigowda08.github.io/Calculator/'>Check here for Webpage</a> </div></div>
+          <div className='grid place-content-center '><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
+          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="/spotifyproject.mp4"/></div>
+          <div className='text-black font-bold text-[10px] font-serif'>Project Name:Spotify Clone <br />Link: <a href='https://github.com/Deekshigowda08/spotifyclone'>Source Code(Check here)</a> </div></div>
+          <div className='grid place-content-center gridsize '><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
+          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay src="/twitterproject.mp4"/></div>
+          <div className='text-black font-bold text-[10px] font-serif'>Project Name:Twitter Clone<br />Link: <a href='https://github.com/Deekshigowda08/twitterclone'>Source Code(Check here)</a> </div></div>
+          <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
+          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="/expenditureproject.mp4"/></div>
+          <div className='text-black font-bold text-[10px] font-serif'>Project Name:Expenditure Calc<br />Link: <a href='https://github.com/Deekshigowda08/expenditure_manager'>Source Code(Check here)</a> </div></div>
+          <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
+          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay src="/gstcalculatorproject.mp4"/></div>
+          <div className='text-black font-bold text-[10px] font-serif'>Project Name:Dynamic GST calc <br />Link: <a href='https://github.com/Deekshigowda08/Dynamic_gst_calculator'>Source Code(Check here)</a> </div></div>
+          <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
+          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="mytaskproject.mp4"/></div>
+          <div className='text-black font-bold text-[10px] font-serif'>Project Name:Mytask<br />Link: <a href='https://github.com/Deekshigowda08/my-task'>Source Code(Check here)</a> </div></div>
+          
+    </div>
+    </div>
+       </div>
+       <div className="relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg border bg-black md:shadow-xl">
+       <div className="relative  h-[85vh] w-[70vw] lastpage items-center justify-center  rounded-lg border bg-white ">
+       <div className='w-full h-[10%] text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Contact me</span></div>
+        
+          <div className='flex justify-center align-middle w-[100%] h-[90%]'>
+            <div className=' w-[90%] flex justify-center align-middle h-[90%] border-2 rounded-2xl'>
+              <div className='w-[60%] input flex flex-col align-middle justify-center h-[100%]'>
+              <input type="email" value={name} onChange={(e)=>{
+                setname(e.target.value)
+              }} className='w-full  px-5 py-3 border-2 border-neutral-600 my-3 placeholder:text-gray-500 sm:placeholder:text-md placeholder:text-xs placeholder:font-serif' placeholder='Enter your email.' />
+              <input type="text" value={email} onChange={(e)=>{
+                setemail(e.target.value)
+              }} className='w-full px-5 py-3 border-2 border-neutral-600 my-3 placeholder:text-gray-500 sm:placeholder:text-md placeholder:text-xs placeholder:font-serif' placeholder='Enter your name.' />
+              <textarea id="paragraph" value={text} onChange={(e)=>{
+                setmessage(e.target.value)
+              }} name="paragraph" class="w-full h-[40%] px-5 py-3 my-3 border-2 border-neutral-600  placeholder:text-gray-500 placeholder:text-md placeholder:font-serif" placeholder="Text here"></textarea>
+              <div className='w-full mt-5 h-[20%] flex justify-center align-middle'><button className='w-[20%] h-[60%] button bg-black rounded-xl text-sm font-serif font-bold  border-gray-500 border-2 text-white' onClick={submit}>Send mail</button></div>
+              </div></div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+          
+        </div>
+       </div>
+       </div>
+      </>
+      )
 }
+
+      export default page

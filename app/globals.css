@@ -1,33 +1,163 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@media (max-width:378px) {
+.margin{
+  padding: 0;
+  margin: 0;
 }
+.fontguru{
+  font-size: large;
+}
+}
+@media (max-width:360px) {
+  .smalltext{
+    font-size: small;
+  }
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@media (max-width:1070px) {
+  .hiding{
+    display: none;
+   
+  }
+  .phonesize1{
+    height: 80vh;
+    width: 90vw;
+  }
+  .flexchanging{
+    display: flex;
+    flex-direction: column;
+  }
+  .page03{
+    width: 90%;
+    padding: 5px;
+    height: 50%;
+  }
+  .page031{
+    width: 80%;
+    padding-left:50px;
+    height: 100%;
+  }
+  .page04{
+    width: 90%;
+    padding:2px;
+    margin-left: 10px;
+    height: 12%;
+    
+  }
+  .input{
+    width: 90%;
+  }
+  .gridsize{
+    height: 20%;
+  }
+  .button{
+    width: 100%;
+  }
+  .lastpage{
+    width: 80vw;
+  }
+  .gridsize01{
+    height: 50px;
+    width: 75px;
+  }
+  .gridsize02{
+   
+    width: 70px;
+  }
+  .gridrow{
+    grid-column: 2;
+  }
+  .smallfont{
+    font-size: 5px;
+  }
+  .circlesize{
+    width: 100%;
+    height: 30%;
+  }
+  .chikka{
+    font-size: 8px;
+  }
+  .phonediv{
+    width: 100vw;
+  }
+  .fontsize{
+    font-size: medium;
+  }
+  .fontsize01{
+    font-size: larger;
+  }
+  .center{
+    display: flex;
+    justify-content: center;
   }
 }
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .slider-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Adjust the height as needed */
+  }
+  
+  .slider-content img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .slider-button.prev {
+    left: 10px;
+  }
+  
+  .slider-button.next {
+    right: 10px;
+  }
+  /* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 2px; /* Width of the scrollbar */
+  height: 2px; /* Height of the scrollbar */
+}
 
+::-webkit-scrollbar-track {
+  background: #ffffff; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Scrollbar color */
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid #ffffff; /* Space around scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f0f0f; /* Color when hovered */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Width of the scrollbar */
+  scrollbar-color: #ffffff #ffffff; /* Scrollbar color and track color */
+}
+
+/* For Internet Explorer and Microsoft Edge */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  -ms-overflow-style: -ms-autohiding-scrollbar; 
 }
