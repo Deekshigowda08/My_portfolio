@@ -33,9 +33,9 @@ body{
     flex-direction: column;
   }
   .page03{
-    width: 90%;
+    width: 100%;
     padding: 5px;
-    height: 50%;
+    height: 100%;
   }
   .page031{
     width: 80%;

@@ -85,9 +85,9 @@ const page = () => {
   }, []);
   return (
     <>
-      <div className="relative  w-full h-screen  grid place-content-center overflow-hidden rounded-lg border bg-black md:shadow-xl">
-        <Meteors  number={150} />
-        <div className='text-white  w-[80vw] h-[75vh] phonesize1  rounded-xl bg-white flex '>
+      <div className="relative  w-full h-screen  grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
+        <Meteors  number={150} className="hidden sm:block" />
+        <div className='text-white  w-[80vw] h-[90vh] lastpage rounded-xl bg-white flex '>
           <div className='w-[60%] phonediv h-full p-10'>
             <div><span className='text-black font-serif font-bold fontsize01 text-3xl'>Hey,It's <span className='text-purple-800 fontsize01 smalltext font-serif font-bold text-3xl'>Deekshith H R</span> </span></div>
             <div className='w-[70%]  sm:hidden  grid place-content-center h-[20%] my-1 mx-auto '>
@@ -136,9 +136,9 @@ const page = () => {
               /></div>
           </div></div>
       </div>
-      <div className='relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg border-2 bg-black md:shadow-xl'>
+      <div className='relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl'>
         <ShineBorder
-          className="relative flex h-[70vh] w-full flex-col  overflow-hidden rounded-lg  border-2 bg-background md:shadow-xl"
+          className="relative flex  h-[90vh]  w-[80vw] flex-col lastpage  overflow-hidden rounded-lg  border-2 bg-background md:shadow-xl"
           color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
         >
           <div><span className='text-purple-800 font-serif font-bold text-3xl'>Education</span></div>
@@ -173,8 +173,8 @@ const page = () => {
           </div>
         </ShineBorder>
       </div>
-      <div className="relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg border bg-black md:shadow-xl">
-        <div className="relative  h-[80vh] lastpage w-[75vw] items-center justify-center  rounded-lg border bg-white ">
+      <div className="relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
+        <div className="relative  h-[90vh] lastpage w-[80vw] items-center justify-center  rounded-lg border bg-white ">
           <div className='w-full text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Skills</span></div>
           <div className='flex flexchanging w-full  phonesize1 h-[90%]'><div className='w-[50%] page03 p-20'>
             <ul className='list-disc font-serif font-semibold text-xs'>
@@ -215,8 +215,8 @@ const page = () => {
           </div>
         </div>
        </div>
-       <div className='relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg border-2 bg-black md:shadow-xl'>
-       <div className="relative  h-[85vh] lastpage w-[70vw] items-center justify-center  rounded-lg border bg-white ">
+       <div className='relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl'>
+       <div className="relative  h-[90vh] lastpage w-[80vw] items-center justify-center  rounded-lg border bg-white ">
         <div className='w-full text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Projects</span></div>
         <div className='h-[20%] w-[90%] page04 mx-10 my-3 rounded-lg px-4 py-3 border '><p class="font-serif font-semibold text-[10px] smallfont text-black ">Here are some of my web development projects created using a variety of technologies. I have utilized JavaScript, HTML, CSS, React.js, Next.js, Express.js,Django, Mongoose, MongoDB, and Figma to build these projects. Each project demonstrates my skills in front-end and back-end development, as well as UI/UX design. From dynamic web applications to responsive user interfaces, these projects showcase my ability to integrate different frameworks and tools effectively. My experience with databases like MongoDB and design tools like Figma further highlights my comprehensive approach to web development. </p></div>
         <div className='w-full sm:grid grid-cols-3  gridrow place-content-center gap-4 gap-y-2 h-[70%]'>
@@ -242,8 +242,8 @@ const page = () => {
     </div>
     </div>
        </div>
-       <div className="relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg border bg-black md:shadow-xl">
-       <div className="relative  h-[85vh] w-[70vw] lastpage items-center justify-center  rounded-lg border bg-white ">
+       <div className="relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
+       <div className="relative  h-[90vh] w-[80vw] lastpage items-center justify-center  rounded-lg border bg-white ">
        <div className='w-full h-[10%] text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Contact me</span></div>
         
           <div className='flex justify-center align-middle w-[100%] h-[90%]'>
