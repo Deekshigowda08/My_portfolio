@@ -108,7 +108,7 @@ const page = () => {
           </div>
             <div><span className='text-black font-serif fontsize font-bold text-2xl'>I'm a <span className='text-purple-800 font-serif  font-bold text-2xl fontsize'> <TypingAnimation texts={texts} duration={100} className="custom-class " /> </span> </span></div>
             <div className='text-black font-serif font-semibold text-xs'><p class=" first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900 first-letter:mr-3 first-letter:float-left">I am an AIML student at the University of Visvesvaraya College of Engineering in Bengaluru. I have knowledge in web development and programming languages including Python, JavaScript, C, and C++. Additionally, I am a basic-level video editor with a strong enthusiasm for technology-related subjects. My passion drives me to continuously explore and learn new technologies.</p></div>
-            <div className='sm:hidden text-red-600 text-xs font-semibold font-serif'>* Use Desktop site option in your phone or Laptop for better view</div>
+            <div className='sm:hidden text-red-600 text-xs font-semibold font-serif'>* Use Laptop or Deskpot for better view</div>
             <div className='flex pl-4 margin center mt-10 text-black'><div className='flex border  rounded-md p-3 gap-4'>
               <Link href="https://www.instagram.com/__deekshith_gowda__08?utm_source=qr&igsh=eDc1eGN6NnVvMWxo" className='hover:bg-gray-200 hover:p-2 hover:rounded-full cursor-pointer'><FiInstagram /></Link>
               <Link href="https://github.com/Deekshigowda08" className='hover:bg-gray-200 hover:p-2 hover:rounded-full cursor-pointer'><IoLogoGithub /></Link>
