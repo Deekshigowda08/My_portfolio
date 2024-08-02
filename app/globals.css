@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body{
+  background-color: black;
+}
 @media (max-width:378px) {
 .margin{
   padding: 0;
