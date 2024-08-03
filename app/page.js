@@ -87,18 +87,18 @@ const page = () => {
     <>
       <div className="relative  w-full h-screen  grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
         <Meteors  number={150} className="hidden sm:block" />
-        <div className='text-white  w-[80vw] h-[90vh] lastpage rounded-xl bg-white flex '>
+        <div className='text-white  w-[80vw] h-[90vh] firstpage rounded-xl bg-white flex '>
           <div className='w-[60%] phonediv h-full p-10'>
-            <div><span className='text-black font-serif font-bold fontsize01 text-3xl'>Hey,It's <span className='text-purple-800 fontsize01 smalltext font-serif font-bold text-3xl'>Deekshith H R</span> </span></div>
+            <div><span className='sm:text-black font-serif font-bold fontsize01 text-3xl'>Hey,It's <span className='text-purple-500 sm:text-purple-800 fontsize01 smalltext font-serif font-bold text-3xl'>Deekshith H R</span> </span></div>
             <div className='w-[70%]  sm:hidden  grid place-content-center h-[20%] my-1 mx-auto '>
-            <div className='w-[80%] h-[50%]  rounded-full overflow-hidden' style={{
+            <div className='w-[80%] h-[50%] photo rounded-full overflow-hidden' style={{
               width: '100px',
               height: '100px',
               border: "2px solid black",
               backgroundColor: color,
               transition: 'background-color 1s ease-in-out',
             }}><Image
-                className='rotate-6'
+                className='rotate-6  '
                 src="/profile.png"
                 width={320}
                 height={320}
@@ -106,10 +106,10 @@ const page = () => {
                 alt="Picture of the author"
               /></div>
           </div>
-            <div><span className='text-black font-serif fontsize font-bold text-2xl'>I'm a <span className='text-purple-800 font-serif  font-bold text-2xl fontsize'> <TypingAnimation texts={texts} duration={100} className="custom-class " /> </span> </span></div>
-            <div className='text-black font-serif font-semibold text-xs'><p class=" first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900 first-letter:mr-3 first-letter:float-left">I am an AIML student at the University of Visvesvaraya College of Engineering in Bengaluru. I have knowledge in web development and programming languages including Python, JavaScript, C, and C++. Additionally, I am a basic-level video editor with a strong enthusiasm for technology-related subjects. My passion drives me to continuously explore and learn new technologies.</p></div>
+            <div><span className='sm:text-black font-serif fontsize font-bold text-2xl'>I'm a <span className='text-purple-500 sm:text-purple-800 font-serif  font-bold text-2xl fontsize'> <TypingAnimation texts={texts} duration={100} className="custom-class " /> </span> </span></div>
+            <div className='sm:text-black font-serif font-semibold text-lg'><p class=" first-line:tracking-widest first-letter:text-7xl first-letter:font-bold sm:first-letter:text-slate-900 first-letter:mr-3 first-letter:float-left">I am an AIML student at the University of Visvesvaraya College of Engineering in Bengaluru. I have knowledge in web development and programming languages including Python, JavaScript, C, and C++. Additionally, I am a basic-level video editor with a strong enthusiasm for technology-related subjects. My passion drives me to continuously explore and learn new technologies.</p></div>
             <div className='sm:hidden text-red-600 text-xs font-semibold font-serif'>* Use Laptop or Deskpot for better view</div>
-            <div className='flex pl-4 margin center mt-10 text-black'><div className='flex border  rounded-md p-3 gap-4'>
+            <div className='flex pl-4 margin center mt-10 sm:text-black'><div className='flex border  rounded-md p-3 gap-4'>
               <Link href="https://www.instagram.com/__deekshith_gowda__08?utm_source=qr&igsh=eDc1eGN6NnVvMWxo" className='hover:bg-gray-200 hover:p-2 hover:rounded-full cursor-pointer'><FiInstagram /></Link>
               <Link href="https://github.com/Deekshigowda08" className='hover:bg-gray-200 hover:p-2 hover:rounded-full cursor-pointer'><IoLogoGithub /></Link>
               <Link href="https://x.com/deekshigowda80?t=TEhWlTDVMvPhidi8VbGuyw&s=08 " className='hover:bg-gray-200 hover:p-2 hover:rounded-full cursor-pointer'><BsTwitterX /></Link>
@@ -136,9 +136,9 @@ const page = () => {
               /></div>
           </div></div>
       </div>
-      <div className='relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl'>
+      <div className='relative  w-full h-screen bord grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl'>
         <ShineBorder
-          className="relative flex  h-[90vh]  w-[80vw] flex-col lastpage  overflow-hidden rounded-lg  border-2 bg-background md:shadow-xl"
+          className="relative flex  h-[90vh]  w-[80vw] flex-col secondpage  overflow-hidden rounded-lg  border-2 bg-background md:shadow-xl"
           color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
         >
           <div><span className='text-purple-800 font-serif font-bold text-3xl'>Education</span></div>
@@ -174,14 +174,14 @@ const page = () => {
         </ShineBorder>
       </div>
       <div className="relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
-        <div className="relative  h-[90vh] lastpage w-[80vw] items-center justify-center  rounded-lg border bg-white ">
+        <div className="relative  h-[90vh] firstpage skills w-[80vw] items-center justify-center  rounded-lg p-1 border bg-white ">
           <div className='w-full text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Skills</span></div>
           <div className='flex flexchanging w-full  phonesize1 h-[90%]'><div className='w-[50%] page03 p-20'>
-            <ul className='list-disc font-serif font-semibold text-xs'>
+            <ul className='list-disc list font-serif font-semibold text-xs'>
               <li><div className='text-base text-violet-800'>Things which i can do.</div>
                 <div className='px-3 '><ul>
                   <li>* Web Delopment</li>
-                  <li>* Basic level Vedio Editing </li>
+                  <li>* Basic level Video Editing </li>
                   <li>* Basic level poster Editing</li></ul></div>
               </li>
               <li><div className='text-base text-violet-800'>Programing language i know.</div>
@@ -202,7 +202,7 @@ const page = () => {
               <li><div className='text-base text-violet-800'>Softwares which i use.</div>
                 <div className='px-3'>
                   <ul>
-                    <li>* Visual Code</li>
+                    <li>* Visual Studio</li>
                     <li>* Davinci Resolve</li>
                     <li>* Picsart</li>
                     <li>* Capcut</li>
@@ -216,34 +216,34 @@ const page = () => {
         </div>
        </div>
        <div className='relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl'>
-       <div className="relative  h-[90vh] lastpage w-[80vw] items-center justify-center  rounded-lg border bg-white ">
+       <div className="relative  h-[90vh] firstpage w-[80vw] items-center justify-center  rounded-lg border bg-white ">
         <div className='w-full text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Projects</span></div>
-        <div className='h-[20%] w-[90%] page04 mx-10 my-3 rounded-lg px-4 py-3 border '><p class="font-serif font-semibold text-[10px] smallfont text-black ">Here are some of my web development projects created using a variety of technologies. I have utilized JavaScript, HTML, CSS, React.js, Next.js, Express.js,Django, Mongoose, MongoDB, and Figma to build these projects. Each project demonstrates my skills in front-end and back-end development, as well as UI/UX design. From dynamic web applications to responsive user interfaces, these projects showcase my ability to integrate different frameworks and tools effectively. My experience with databases like MongoDB and design tools like Figma further highlights my comprehensive approach to web development. </p></div>
+        <div className='h-[20%] w-[90%] page04 mx-10 my-3 rounded-lg px-4 py-3 border '><p class="font-serif font-semibold  fourth text-[10px] smallfont text-black ">Here are some of my web development projects created using a variety of technologies. I have utilized JavaScript, HTML, CSS, React.js, Next.js, Express.js,Django, Mongoose, MongoDB, and Figma to build these projects. Each project demonstrates my skills in front-end and back-end development, as well as UI/UX design. From dynamic web applications to responsive user interfaces, these projects showcase my ability to integrate different frameworks and tools effectively. My experience with databases like MongoDB and design tools like Figma further highlights my comprehensive approach to web development. </p></div>
         <div className='w-full sm:grid grid-cols-3  gridrow place-content-center gap-4 gap-y-2 h-[70%]'>
           <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
           <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay  src="/sgpaproject.mp4"/></div>
-          <div className='text-black font-bold text-[10px] font-serif'>Project Name:SGPA calculator <br />Link: <a href='https://deekshigowda08.github.io/Calculator/'>Check here for Webpage</a> </div></div>
+          <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:SGPA calculator <br />Link: <a href='https://deekshigowda08.github.io/Calculator/'>Check here for Webpage</a> </div></div>
           <div className='grid place-content-center '><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
           <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="/spotifyproject.mp4"/></div>
-          <div className='text-black font-bold text-[10px] font-serif'>Project Name:Spotify Clone <br />Link: <a href='https://github.com/Deekshigowda08/spotifyclone'>Source Code(Check here)</a> </div></div>
-          <div className='grid place-content-center gridsize '><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
+          <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:Spotify Clone <br />Link: <a href='https://github.com/Deekshigowda08/spotifyclone'>Source Code(Check here)</a> </div></div>
+          <div className='grid place-content-center gridsize '><div className='grid place-content-center relative'><Image className='z-10 gridsize01 ' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
           <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay src="/twitterproject.mp4"/></div>
-          <div className='text-black font-bold text-[10px] font-serif'>Project Name:Twitter Clone<br />Link: <a href='https://github.com/Deekshigowda08/twitterclone'>Source Code(Check here)</a> </div></div>
+          <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:Twitter Clone<br />Link: <a href='https://github.com/Deekshigowda08/twitterclone'>Source Code(Check here)</a> </div></div>
           <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
           <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="/expenditureproject.mp4"/></div>
-          <div className='text-black font-bold text-[10px] font-serif'>Project Name:Expenditure Calc<br />Link: <a href='https://github.com/Deekshigowda08/expenditure_manager'>Source Code(Check here)</a> </div></div>
+          <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:Expenditure Calc<br />Link: <a href='https://github.com/Deekshigowda08/expenditure_manager'>Source Code(Check here)</a> </div></div>
           <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
           <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay src="/gstcalculatorproject.mp4"/></div>
-          <div className='text-black font-bold text-[10px] font-serif'>Project Name:Dynamic GST calc <br />Link: <a href='https://github.com/Deekshigowda08/Dynamic_gst_calculator'>Source Code(Check here)</a> </div></div>
+          <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:Dynamic GST calc <br />Link: <a href='https://github.com/Deekshigowda08/Dynamic_gst_calculator'>Source Code(Check here)</a> </div></div>
           <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
           <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="mytaskproject.mp4"/></div>
-          <div className='text-black font-bold text-[10px] font-serif'>Project Name:Mytask<br />Link: <a href='https://github.com/Deekshigowda08/my-task'>Source Code(Check here)</a> </div></div>
+          <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:Mytask<br />Link: <a href='https://github.com/Deekshigowda08/my-task'>Source Code(Check here)</a> </div></div>
           
     </div>
     </div>
        </div>
        <div className="relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
-       <div className="relative  h-[90vh] w-[80vw] lastpage items-center justify-center  rounded-lg border bg-white ">
+       <div className="relative  h-[90vh] w-[80vw] firstpage items-center justify-center  rounded-lg border bg-white ">
        <div className='w-full h-[10%] text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Contact me</span></div>
         
           <div className='flex justify-center align-middle w-[100%] h-[90%]'>
@@ -251,13 +251,13 @@ const page = () => {
               <div className='w-[60%] input flex flex-col align-middle justify-center h-[100%]'>
               <input type="email" value={name} onChange={(e)=>{
                 setname(e.target.value)
-              }} className='w-full  px-5 py-3 border-2 border-neutral-600 my-3 placeholder:text-gray-500 sm:placeholder:text-md placeholder:text-xs placeholder:font-serif' placeholder='Enter your email.' />
+              }} className='w-full  px-5 py-3 change border-2 border-neutral-600 my-3 placeholder:text-gray-500 sm:placeholder:text-md placeholder:text-xs placeholder:font-serif' placeholder='Enter your email.' />
               <input type="text" value={email} onChange={(e)=>{
                 setemail(e.target.value)
-              }} className='w-full px-5 py-3 border-2 border-neutral-600 my-3 placeholder:text-gray-500 sm:placeholder:text-md placeholder:text-xs placeholder:font-serif' placeholder='Enter your name.' />
+              }} className='w-full px-5 change py-3 border-2 border-neutral-600 my-3 placeholder:text-gray-500 sm:placeholder:text-md placeholder:text-xs placeholder:font-serif' placeholder='Enter your name.' />
               <textarea id="paragraph" value={text} onChange={(e)=>{
                 setmessage(e.target.value)
-              }} name="paragraph" class="w-full h-[40%] px-5 py-3 my-3 border-2 border-neutral-600  placeholder:text-gray-500 placeholder:text-md placeholder:font-serif" placeholder="Text here"></textarea>
+              }} name="paragraph" class="w-full change h-[40%] px-5 py-3 my-3 border-2 border-neutral-600  placeholder:text-gray-500 placeholder:text-md placeholder:font-serif" placeholder="Text here"></textarea>
               <div className='w-full mt-5 h-[20%] flex justify-center align-middle'><button className='w-[20%] h-[60%] button bg-black rounded-xl text-sm font-serif font-bold  border-gray-500 border-2 text-white' onClick={submit}>Send mail</button></div>
               </div></div>
 

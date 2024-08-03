@@ -27,7 +27,7 @@ function ShineBorder({
         "--border-radius": `${borderRadius}px`,
       }}
       className={
-        "relative grid h-[75vh] w-[80vw] place-items-center rounded-[--border-radius] bg-white p-3 text-black dark:bg-black dark:text-white"
+        "relative grid h-[98vh] w-[98vw] place-items-center rounded-[--border-radius] bg-black p-3   dark:text-white"
       }
     >
       <div
