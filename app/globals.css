@@ -41,9 +41,9 @@ body{
     height: 100%;
   }
   .page031{
-    width: 130%;
+    width: 120%;
     padding-left:50px;
-    height: 60%;
+    height: 80%;
     padding-top: 0;
   }
   .fourth{
@@ -108,6 +108,10 @@ body{
   }
   .skills{
     margin-top: 100px;
+  }
+  .bord01{
+    border-bottom: rgb(255, 255, 255);
+    border: 1px;
   }
   .list{
     margin: 20%;

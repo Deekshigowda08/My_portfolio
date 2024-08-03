@@ -85,7 +85,7 @@ const page = () => {
   }, []);
   return (
     <>
-      <div className="relative  w-full h-screen  grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
+      <div className="relative  w-full h-screen bord01  grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
         <Meteors  number={150} className="hidden sm:block" />
         <div className='text-white  w-[80vw] h-[90vh] firstpage rounded-xl bg-white flex '>
           <div className='w-[60%] phonediv h-full p-10'>
@@ -138,7 +138,7 @@ const page = () => {
       </div>
       <div className='relative  w-full h-screen bord grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl'>
         <ShineBorder
-          className="relative flex  h-[90vh]  w-[80vw] flex-col secondpage  overflow-hidden rounded-lg  border-2 bg-background md:shadow-xl"
+          className="relative flex  h-[90vh]  w-[80vw] flex-col secondpage  overflow-hidden sm:rounded-lg border-t sm:border-2 bg-background md:shadow-xl"
           color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
         >
           <div><span className='text-purple-800 font-serif font-bold text-3xl'>Education</span></div>
@@ -174,17 +174,17 @@ const page = () => {
         </ShineBorder>
       </div>
       <div className="relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
-        <div className="relative  h-[90vh] firstpage skills w-[80vw] items-center justify-center  rounded-lg p-1 border bg-white ">
+        <div className="relative  h-[90vh] firstpage skills w-[80vw] items-center justify-center  sm:rounded-lg p-1 border-t sm:border bg-white ">
           <div className='w-full text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Skills</span></div>
           <div className='flex flexchanging w-full  phonesize1 h-[90%]'><div className='w-[50%] page03 p-20'>
             <ul className='list-disc list font-serif font-semibold text-xs'>
-              <li><div className='text-base text-violet-800'>Things which i can do.</div>
+              <li><div className='text-xl text-violet-800'>Things which i can do.</div>
                 <div className='px-3 '><ul>
                   <li>* Web Delopment</li>
                   <li>* Basic level Video Editing </li>
                   <li>* Basic level poster Editing</li></ul></div>
               </li>
-              <li><div className='text-base text-violet-800'>Programing language i know.</div>
+              <li><div className='text-xl text-violet-800'>Programing language i know.</div>
                 <div className='px-3'><ul>
                   <li>* C++</li>
                   <li>* C</li>
@@ -192,14 +192,14 @@ const page = () => {
                   <li>* javascript</li>
                 </ul></div>
               </li>
-              <li><div className='text-base text-violet-800'>Language which i know.</div>
+              <li><div className='text-xl text-violet-800'>Language which i know.</div>
                 <div className='px-3'><ul>
                   <li>* Kannada</li>
                   <li>* English</li>
                   <li>* Hindi</li>
                 </ul></div>
               </li>
-              <li><div className='text-base text-violet-800'>Softwares which i use.</div>
+              <li><div className='text-xl text-violet-800'>Softwares which i use.</div>
                 <div className='px-3'>
                   <ul>
                     <li>* Visual Studio</li>
@@ -216,9 +216,9 @@ const page = () => {
         </div>
        </div>
        <div className='relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl'>
-       <div className="relative  h-[90vh] firstpage w-[80vw] items-center justify-center  rounded-lg border bg-white ">
+       <div className="relative  h-[90vh] firstpage w-[80vw] items-center justify-center  sm:rounded-lg border-t sm:border bg-white ">
         <div className='w-full text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Projects</span></div>
-        <div className='h-[20%] w-[90%] page04 mx-10 my-3 rounded-lg px-4 py-3 border '><p class="font-serif font-semibold  fourth text-[10px] smallfont text-black ">Here are some of my web development projects created using a variety of technologies. I have utilized JavaScript, HTML, CSS, React.js, Next.js, Express.js,Django, Mongoose, MongoDB, and Figma to build these projects. Each project demonstrates my skills in front-end and back-end development, as well as UI/UX design. From dynamic web applications to responsive user interfaces, these projects showcase my ability to integrate different frameworks and tools effectively. My experience with databases like MongoDB and design tools like Figma further highlights my comprehensive approach to web development. </p></div>
+        <div className='h-[20%] w-[90%] page04 mx-10 my-3 rounded-lg px-4 py-3 border '><p class="font-serif font-semibold  fourth sm:text-xs smallfont text-black ">Here are some of my web development projects created using a variety of technologies. I have utilized JavaScript, HTML, CSS, React.js, Next.js, Express.js,Django, Mongoose, MongoDB, and Figma to build these projects. Each project demonstrates my skills in front-end and back-end development, as well as UI/UX design. From dynamic web applications to responsive user interfaces, these projects showcase my ability to integrate different frameworks and tools effectively. My experience with databases like MongoDB and design tools like Figma further highlights my comprehensive approach to web development. </p></div>
         <div className='w-full sm:grid grid-cols-3  gridrow place-content-center gap-4 gap-y-2 h-[70%]'>
           <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
           <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay  src="/sgpaproject.mp4"/></div>
@@ -243,7 +243,7 @@ const page = () => {
     </div>
        </div>
        <div className="relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
-       <div className="relative  h-[90vh] w-[80vw] firstpage items-center justify-center  rounded-lg border bg-white ">
+       <div className="relative  h-[90vh] w-[80vw] firstpage items-center justify-center border-t  sm:rounded-lg sm:border bg-white ">
        <div className='w-full h-[10%] text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Contact me</span></div>
         
           <div className='flex justify-center align-middle w-[100%] h-[90%]'>
