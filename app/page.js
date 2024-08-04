@@ -218,25 +218,25 @@ const page = () => {
        <div className='relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl'>
        <div className="relative  h-[90vh] firstpage w-[80vw] items-center justify-center  sm:rounded-lg border-t sm:border bg-white ">
         <div className='w-full text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Projects</span></div>
-        <div className='h-[20%] w-[90%] page04 mx-10 my-3 rounded-lg px-4 py-3 border '><p class="font-serif font-semibold  fourth sm:text-xs smallfont text-black ">Here are some of my web development projects created using a variety of technologies. I have utilized JavaScript, HTML, CSS, React.js, Next.js, Express.js,Django, Mongoose, MongoDB, and Figma to build these projects. Each project demonstrates my skills in front-end and back-end development, as well as UI/UX design. From dynamic web applications to responsive user interfaces, these projects showcase my ability to integrate different frameworks and tools effectively. My experience with databases like MongoDB and design tools like Figma further highlights my comprehensive approach to web development. </p></div>
+        <div className='h-[20%] w-[90%] page04 mx-10 my-2 sm:my-3 rounded-lg px-4 py-2 sm:py-3 border '><p class="font-serif font-semibold  fourth sm:text-xs smallfont text-black ">Here are some of my web development projects created using a variety of technologies. I have utilized JavaScript, HTML, CSS, React.js, Next.js, Express.js,Django, Mongoose, MongoDB, and Figma to build these projects. Each project demonstrates my skills in front-end and back-end development, as well as UI/UX design. From dynamic web applications to responsive user interfaces, these projects showcase my ability to integrate different frameworks and tools effectively. My experience with databases like MongoDB and design tools like Figma further highlights my comprehensive approach to web development. </p></div>
         <div className='w-full sm:grid grid-cols-3  gridrow place-content-center gap-4 gap-y-2 h-[70%]'>
           <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
-          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay  src="/sgpaproject.mp4"/></div>
+          <video className='absolute sm:ml-3  ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay  src="/sgpaproject.mp4"/></div>
           <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:SGPA calculator <br />Link: <a href='https://deekshigowda08.github.io/Calculator/'>Check here for Webpage</a> </div></div>
           <div className='grid place-content-center '><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
-          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="/spotifyproject.mp4"/></div>
+          <video className='absolute sm:ml-3  ml-11 sm:mt-3 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="/spotifyproject.mp4"/></div>
           <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:Spotify Clone <br />Link: <a href='https://github.com/Deekshigowda08/spotifyclone'>Source Code(Check here)</a> </div></div>
           <div className='grid place-content-center gridsize '><div className='grid place-content-center relative'><Image className='z-10 gridsize01 ' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
-          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay src="/twitterproject.mp4"/></div>
+          <video className='absolute sm:ml-3  ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay src="/twitterproject.mp4"/></div>
           <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:Twitter Clone<br />Link: <a href='https://github.com/Deekshigowda08/twitterclone'>Source Code(Check here)</a> </div></div>
           <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
-          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="/expenditureproject.mp4"/></div>
+          <video className='absolute sm:ml-3  ml-11 sm:mt-3 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="/expenditureproject.mp4"/></div>
           <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:Expenditure Calc<br />Link: <a href='https://github.com/Deekshigowda08/expenditure_manager'>Source Code(Check here)</a> </div></div>
           <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
-          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay src="/gstcalculatorproject.mp4"/></div>
+          <video className='absolute sm:ml-3  ml-11 sm:mt-3 z-0 gridsize02 ' width={'140px'}  loop muted autoPlay src="/gstcalculatorproject.mp4"/></div>
           <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:Dynamic GST calc <br />Link: <a href='https://github.com/Deekshigowda08/Dynamic_gst_calculator'>Source Code(Check here)</a> </div></div>
           <div className='grid place-content-center gridsize'><div className='grid place-content-center relative'><Image className='z-10 gridsize01' src='/Black-Frame.png' alt="Logo" width={150} height={100} />
-          <video className='absolute sm:ml-3 mt-2 ml-11 sm:mt-3 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="mytaskproject.mp4"/></div>
+          <video className='absolute sm:ml-3  ml-11 sm:mt-1 z-0 gridsize02  ' width={'140px'}  loop muted autoPlay src="mytaskproject.mp4"/></div>
           <div className='sm:text-black font-bold text-[10px] font-serif'>Project Name:Mytask<br />Link: <a href='https://github.com/Deekshigowda08/my-task'>Source Code(Check here)</a> </div></div>
           
     </div>
