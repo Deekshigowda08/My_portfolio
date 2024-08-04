@@ -67,6 +67,7 @@ body{
     background-color: black;
     color: #ffffff;
   }
+  
   .bord{
     border: #a5a5a5;
     border-width: 2px;
@@ -81,13 +82,18 @@ body{
   .gridsize{
     height: 20%;
   }
+  .z{
+    z-index: 10;
+  }
   .button{
     width: 100%;
     background-color: #ffffffc9;
     color: #0f0f0f;
   }
   .lastpage{
-    width: 87vw;
+   top: 20vh;
+   
+    z-index: 0;
   }
   .gridsize01{
     height: 50px;
