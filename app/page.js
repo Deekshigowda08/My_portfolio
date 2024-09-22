@@ -12,6 +12,11 @@ import IconCloud from ".//rounded.js"
 import Link from 'next/link.js';
 import { ToastContainer, toast } from 'react-toastify';
 import Image from 'next/image'
+import emailjs from 'emailjs-com';
+
+
+
+ 
 const Circle = forwardRef(
   ({ className, children }, ref) => {
     return (
@@ -36,6 +41,27 @@ const page = () => {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [text, setmessage] = useState("")
+  const sendEmail = (e) => {
+    e.preventDefault();
+     const temp={
+      from_name:email,
+      to_name:name,
+      message:text
+     }
+    emailjs
+      .send('service_16yq6gb', 'template_zeruuwm',temp,
+        'e5_TZqzT5rVI6QPRy'
+      )
+      .then(
+        () => {
+          alert("Email had been sent")
+
+        },
+        (error) => {
+          alert("Email had not sent,try agian")
+        },
+      );}
+
   const submit=async (e)=>{
     e.preventDefault();
     if (name=="" && email=="" &&text=="") {
@@ -258,7 +284,7 @@ const page = () => {
               <textarea id="paragraph" value={text} onChange={(e)=>{
                 setmessage(e.target.value)
               }} name="paragraph" class="w-full change h-[40%] px-5 py-3 my-3 border-2 border-neutral-600  placeholder:text-gray-500 placeholder:text-md placeholder:font-serif" placeholder="Text here"></textarea>
-              <div className='w-full mt-5 h-[20%] flex justify-center align-middle'><button className='w-[20%] h-[60%] button bg-black rounded-xl text-sm font-serif font-bold  border-gray-500 border-2 text-white' onClick={submit}>Send mail</button></div>
+              <div className='w-full mt-5 h-[20%] flex justify-center align-middle'><button className='w-[20%] h-[60%] button bg-black rounded-xl text-sm font-serif font-bold  border-gray-500 border-2 text-white' onClick={sendEmail}>Send mail</button></div>
               </div></div>
 
           
