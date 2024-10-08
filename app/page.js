@@ -38,49 +38,38 @@ const page = () => {
   const div1Ref = useRef(null);
   const div2Ref = useRef(null);
   const div3Ref = useRef(null);
+  const submited = useRef(null)
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [text, setmessage] = useState("")
-  const sendEmail = (e) => {
+  const sendEmail=async (e)=>{
     e.preventDefault();
-     const temp={
-      from_name:email,
-      to_name:name,
-      message:text
-     }
-    emailjs
-      .send('service_16yq6gb', 'template_zeruuwm',temp,
-        'e5_TZqzT5rVI6QPRy'
-      )
-      .then(
-        () => {
-          alert("Email had been sent")
-
-        },
-        (error) => {
-          alert("Email had not sent,try agian")
-        },
-      );}
-
-  const submit=async (e)=>{
-    e.preventDefault();
+    submited.current.style.backgroundColor="red"
+    submited.current.innerText="Processing"
     if (name=="" && email=="" &&text=="") {
-      alert("Enter vaild message")
+      submited.current.style.backgroundColor="lightblue"
+      submited.current.innerText="Try Again"
   }else{
-      const a=await fetch("/api", {
-        method: "post",
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({name,email,text})
-      });
-      const result= await a.json()
-    if(result.success)
-     {
-      alert("Email had been sent")
-      setname("");setemail("");setmessage("");}
-      
+    const temp={
+     from_name:email,
+     to_name:name,
+     message:text
+    }
+   emailjs
+     .send('service_16yq6gb', 'template_zeruuwm',temp,
+       'e5_TZqzT5rVI6QPRy'
+     )
+     .then(
+       () => {
+         setname("");setemail("");setmessage("");
+        submited.current.style.backgroundColor="#b3e8b2"
+        submited.current.innerText="Done"
+       },
+       (error) => {
+         submited.current.style.backgroundColor="lightblue"
+         submited.current.innerText="Try Again"
+       },
+     );
   }
   };
   const slugs = [
@@ -117,7 +106,7 @@ const page = () => {
           <div className='w-[60%] phonediv h-full p-10'>
             <div><span className='sm:text-black font-serif font-bold fontsize01 text-3xl'>Hey,It's <span className='text-purple-500 sm:text-purple-800 fontsize01 smalltext font-serif font-bold text-3xl'>Deekshith H R</span> </span></div>
             <div className='w-[70%]  sm:hidden  grid place-content-center h-[20%] my-1 mx-auto '>
-            <div className='w-[80%] h-[50%] photo rounded-full overflow-hidden' style={{
+            <div className='w-[80%] h-[50%] photo rounded-full  overflow-hidden' style={{
               width: '100px',
               height: '100px',
               border: "2px solid black",
@@ -277,14 +266,14 @@ const page = () => {
               <div className='w-[60%] input flex flex-col align-middle justify-center h-[100%]'>
               <input type="email" value={name} onChange={(e)=>{
                 setname(e.target.value)
-              }} className='w-full  px-5 py-3 change border-2 border-neutral-600 my-3 placeholder:text-gray-500 sm:placeholder:text-md placeholder:text-xs placeholder:font-serif' placeholder='Enter your email.' />
+              }} required className='w-full  px-5 py-3 change border-2 border-neutral-600 my-3 placeholder:text-gray-500 sm:placeholder:text-md placeholder:text-xs placeholder:font-serif' placeholder='Enter your email.' />
               <input type="text" value={email} onChange={(e)=>{
                 setemail(e.target.value)
               }} className='w-full px-5 change py-3 border-2 border-neutral-600 my-3 placeholder:text-gray-500 sm:placeholder:text-md placeholder:text-xs placeholder:font-serif' placeholder='Enter your name.' />
               <textarea id="paragraph" value={text} onChange={(e)=>{
                 setmessage(e.target.value)
               }} name="paragraph" class="w-full change h-[40%] px-5 py-3 my-3 border-2 border-neutral-600  placeholder:text-gray-500 placeholder:text-md placeholder:font-serif" placeholder="Text here"></textarea>
-              <div className='w-full mt-5 h-[20%] flex justify-center align-middle'><button className='w-[20%] h-[60%] button bg-black rounded-xl text-sm font-serif font-bold  border-gray-500 border-2 text-white' onClick={sendEmail}>Send mail</button></div>
+              <div className='w-full mt-5 h-[20%] flex justify-center align-middle'><button ref={submited} className='w-[20%] h-[60%] button bg-black rounded-xl text-sm font-serif font-bold  border-gray-500 border-2 text-white' onClick={sendEmail}>Send mail</button></div>
               </div></div>
 
           
