@@ -13,6 +13,9 @@ import Link from 'next/link.js';
 import { ToastContainer, toast } from 'react-toastify';
 import Image from 'next/image'
 import emailjs from 'emailjs-com';
+import { DockDemo } from './phonestpage.js';
+import { MarqueeDemo } from './projects.js';
+import { MagicCardDemo } from './magiccard.js';
 
 
 
@@ -100,7 +103,9 @@ const page = () => {
   }, []);
   return (
     <>
-      <div className="relative  w-full h-screen bord01  grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
+    <div className='sm:hidden max-h-full text-white'><DockDemo/>
+    <MarqueeDemo/></div>
+      <div className="relative hidden  w-full h-screen bord01  sm:grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
         <Meteors  number={150} className="hidden sm:block" />
         <div className='text-white  w-[80vw] h-[90vh] firstpage rounded-xl bg-white flex '>
           <div className='w-[60%] phonediv h-full p-10'>
@@ -113,10 +118,10 @@ const page = () => {
               backgroundColor: color,
               transition: 'background-color 1s ease-in-out',
             }}><Image
-                className='rotate-6  '
+                className='-translate-x-2 sm:translate-x-20 sm:translate-y-20 translate-y-2'
                 src="/profile.png"
-                width={320}
-                height={320}
+                width={400}
+                height={400}
 
                 alt="Picture of the author"
               /></div>
@@ -151,14 +156,16 @@ const page = () => {
               /></div>
           </div></div>
       </div>
-      <div className='relative  w-full h-screen  bord grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl'>
+      <div className='text-white sm:hidden flex flex-wrap bg-black'><MagicCardDemo/></div>
+      <div className='relative  w-full sm:h-screen h-full  bord hidden sm:grid place-content-center overflow-hidden rounded-lg  bg-black  md:shadow-xl'>
+        
         <ShineBorder
-          className="relative flex  h-[90vh]   w-[80vw] flex-col secondpage  overflow-hidden sm:rounded-lg border-t sm:border-2 bg-background md:shadow-xl"
+          className="relative sm:flex hidden  h-[90vh]   w-[80vw] flex-col secondpage  overflow-hidden sm:rounded-lg border-t sm:border-2 bg-black md:shadow-xl"
           color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
         >
-          <div><span className='text-purple-800 font-serif font-bold text-3xl'>Education</span></div>
+          <div><span className='text-purple-800 font-serif sm:bg-white font-bold text-3xl'>Education</span></div>
           <div
-            className="relative flex w-full   justify-center overflow-hidden rounded-lg  bg-background p-10 "
+            className="relative flex w-full   justify-center overflow-hidden rounded-lg  bg-black sm:bg-white p-10 "
             ref={containerRef}
           >
             <div className="flex h-full w-full flex-col items-stretch justify-between gap-10">
@@ -188,7 +195,7 @@ const page = () => {
           </div>
         </ShineBorder>
       </div>
-      <div className="relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
+      <div className="relative  w-full h-screen hidden  sm:grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
         <div className="relative  h-[90vh] firstpage skills w-[80vw] items-center justify-center  sm:rounded-lg p-1 border-t sm:border bg-white ">
           <div className='w-full text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Skills</span></div>
           <div className='flex flexchanging w-full  phonesize1 h-[90%]'><div className='w-[50%] page03 p-20'>
@@ -230,7 +237,7 @@ const page = () => {
           </div>
         </div>
        </div>
-       <div className='relative  w-full h-screen grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl'>
+       <div className='relative  w-full h-screen hidden  sm:grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl'>
        <div className="relative  h-[90vh] z-10 firstpage w-[80vw] items-center justify-center  sm:rounded-lg border-t sm:border bg-white ">
         <div className='w-full text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Projects</span></div>
         <div className='h-[20%] w-[90%] page04 mx-10 my-3 rounded-lg px-4 py-3 border '><p class="font-serif font-semibold  fourth sm:text-xs smallfont text-black ">Here are some of my web development projects created using a variety of technologies. I have utilized JavaScript, HTML, CSS, React.js, Next.js, Express.js,Django, Mongoose, MongoDB, and Figma to build these projects. Each project demonstrates my skills in front-end and back-end development, as well as UI/UX design. From dynamic web applications to responsive user interfaces, these projects showcase my ability to integrate different frameworks and tools effectively. My experience with databases like MongoDB and design tools like Figma further highlights my comprehensive approach to web development. </p></div>
@@ -257,9 +264,9 @@ const page = () => {
     </div>
     </div>
        </div>
-       <div className="relative  w-full h-screen lastpage z-0 grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
-       <div className="relative  h-[90vh] w-[80vw] firstpage  items-center justify-center border-t  sm:rounded-lg sm:border bg-white ">
-       <div className='w-full h-[10%] text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Contact me</span></div>
+       <div className="relative  w-full sm:h-screen h-full sm:mt-0 -mt-20 lastpage z-0 grid place-content-center overflow-hidden rounded-lg  bg-black md:shadow-xl">
+       <div className="relative  h-[90vh] w-[80vw] firstpage  items-center justify-center  sm:rounded-lg sm:border bg-white ">
+       <div className='w-full h-[10%] mt-9 sm:mt-0 text-center'><span className='text-purple-800 font-serif font-bold text-3xl'>Contact me</span></div>
         
           <div className='flex justify-center align-middle w-[100%] h-[90%]'>
             <div className=' w-[90%] flex justify-center align-middle h-[90%] border-2 rounded-2xl'>
