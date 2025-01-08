@@ -2,7 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
-import { Check, Copy } from "lucide-react";
+require = require('esm')(module);
+const shiki = require('shiki');
 import { useEffect, useState } from "react";
 import { codeToHtml } from "shiki";
 
