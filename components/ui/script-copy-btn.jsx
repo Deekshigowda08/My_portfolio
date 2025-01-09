@@ -2,10 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
-require = require('esm')(module);
-const shiki = require('shiki');
 import { useEffect, useState } from "react";
-import { codeToHtml } from "shiki";
 
 export default function ScriptCopyBtn({
   showMultiplePackageOptions = false,
@@ -42,7 +39,8 @@ export default function ScriptCopyBtn({
   
 
   return (
-    (<div
+    
+    <div
       className={cn("mx-auto flex w-[80%] items-center justify-center", className)}>
       <div className="w-full space-y-2">
         <div className="mb-2 flex items-center justify-between">
@@ -85,22 +83,13 @@ export default function ScriptCopyBtn({
         </div>
         <div className="relative flex items-center">
           <div className="text-purple-800 text-xl min-w-[300px] grow font-mono">
-            {highlightedCode ? (
-              <div
-                className={`[&>pre]:overflow-x-auto [&>pre]:rounded-md [&>pre]:p-2 [&>pre]:px-4 [&>pre]:font-mono ${
-                  "dark"
-                }`}
-                dangerouslySetInnerHTML={{ __html: highlightedCode }} />
-            ) : (
-              <pre
-                className="rounded-md border border-border text-amber-800 p-2 px-4 font-mono">
-                {command}
-              </pre>
-            )}
+          <div className="rounded-md p-2 px-4 font-mono">
+          {command}
           </div>
           
         </div>
       </div>
-    </div>)
+    </div>
+    </div>
   );
 }
